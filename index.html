@@ -10,7 +10,7 @@
 
 <!-- FONT AWESOME -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-<link rel="icon" href="archerslogojpg" type="image/jpeg" />
+<link rel="icon" href="archerslogo.jpg" type="image/jpeg" />
 
 <!-- EMAILJS SDK -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -2159,13 +2159,13 @@ const showMoreBtn = document.getElementById('showMoreBtn');
 const moreMilestones = document.getElementById('moreMilestones');
 let expanded = false;
 
-if (showMoreBtn) {
+    if (showMoreBtn) {
     showMoreBtn.addEventListener('click', () => {
         expanded = !expanded;
         moreMilestones.classList.toggle('visible', expanded);
         showMoreBtn.innerHTML = expanded
             ? '<i class="fas fa-chevron-up" style="margin-right:6px;"></i> Show Less'
-            : '<i class="fas fa-chevron-down" style="margin-right:6px;"></i> Show All Milestones';
+            : '<i class="fas fa-chevron-down" style="margin-right:6px;"></i> Show More';
     });
 }
 
@@ -2219,8 +2219,11 @@ contactForm.addEventListener('submit', async function(e) {
         name: name,
         email: email,
         subject: subject,
+        email_subject: subject,
+        contact_subject: subject,
         message: message,
-        from_name: name,
+        message_with_subject: `Subject: ${subject}\n\n${message}`,
+        from_name: 'archersevents',
         reply_to: email,
         user_name: name,
         user_email: email,
